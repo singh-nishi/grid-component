@@ -5,68 +5,127 @@ import {Http, Response } from '@angular/http';
 //import {Subject} from 'rxjs/subject';
 @Component({
  selector: 'app-root',
- template:`
-            <table border=1>
+ template:`<table border=1>
               <thead>
-                <tr *ngFor="let data of sub">
-                  <td>
-                    {{data.name}}
-                  </td>
-                  <td>
-                    {{data.abbreviation}}
+                <tr>
+                  <td *ngFor="let ke of key">
+                    {{ke}}
                   </td>
                 </tr>
               </thead>
-             </table>
+              <tbody>
+                <tr>
+                  <td *ngFor="let va of val">
+                    {{va}}
+                  </td>
+                </tr>
+              </tbody>  
+            </table>
            `,
 providers: [Myservice]
 })
-export class AppComponent implements OnInit {
- public jsonURL: string = './assets/data/CountryList.json';
-  // keys: string[]=[];
-  // values: string[]=[];
-  sub:any;
-
-  //data:Observable<Array<any>>;
-  // records: object; 
-  // name:string;
-  private errorMessage: any = '';
+export class AppComponent {
+ result: string;
+ keys: string[]=[];
+ dataval: string [];
+ //obj: Object;
+ key:string[]=[];
+ val:string[]=[];
+ constructor(private _myservice: Myservice){
+   this.getRecrods();
+ } 
+ getRecrods() {
+     {
+    this._myservice.getValues().subscribe(value => {
+     // console.log(value);
+      this.result=JSON.stringify(value);
+      console.log('result');
+      console.log(this.result);
+      this.dataval=value;
+      console.log('dateval');
+      console.log(this.dataval);
+    //});
  
-  constructor(private _myservice: Myservice,private http: Http) {
-     this.getData();
-    // this.getV();
-    }
-    ngOnInit() {
-       //this.getData();
-    }
-    getData() {
-      this._myservice.getRecordsDetails()
-      .subscribe(
-        sub => this.sub = sub,
-        error => this.errorMessage = <any> error);
-        console.log(this.sub);
+     this.keys=this.dataval;
+    // console.log('keys');
+    // console.log(this.keys);
+  
+    console.log('Array iterate..'); 
 
-           
-          // for (let i of this.sub) {
-          //   console.log(i);
-          //   for (let j in i) {
-          //    console.log(j);
-          //          }
-          //  }
-       //console.log(this.keys);
+    JSON.parse( this.result, (key, value) => {
+    this.key.push(key);
+    this.val.push(value);
+    
 
-      }
+   // console.log(key); 
+  // this.val.push(value);
+   // console.log(value);
+});
+ // console.log(this.key);
 
 
-      // getV(){
-      // this.http.get(this.jsonURL)
-      // .map((response: Response) => {
-      //  let result = response.json();
-      //   console.log(result);
-      //  });
-      // }
-     }  
+     //this.obj=JSON.parse(value);
+     //console.log(this.obj);
+  
+     // function parseObject(obj)
+     //{
+    //  for(let key in this.obj)
+    //   {
+    //   console.log("key: " + key + ", value: " + this.obj[key])
+    //   // if(this.obj[key] instanceof Object)
+    //   // {
+    //   //  // parseObject(obj[key]);
+    //   //  console.log(this.obj[key]);
+    //   // }
+    //  }
+ // }
 
+
+    //  let property = [];
+
+    //  for (let i = 0; i < this.dataval.length; i++) {
+    //  property.push(this.dataval[0]);
+    //   }
+
+   //console.log(property);
+   //console.log('Loop Start..');
+    
+    // for(let index of this.dataval) {
+    //     console.log(index);
+    //     for(let index1 in index.toString)
+    //     {
+    //       console.log(index1[index]);
+    //       //console.log(index1);
+    //     }
+    //   }
+
+
+    });
+
+  // JSON.parse(this.result, (key, value) => {
+  // if (typeof value === 'string') {
+  // console.log(value.toUpperCase());
+  // }
+  // console.log(key);
+  // ids.push(key);
+  // });
+  // console.log(ids);
+
+  // for (let i in this.result[0])
+  // {
+  // console.log(i);
+  // }
+
+//  for (let i of this.dataval) {
+//          console.log(i);
+//            for (let j in i) {
+//             console.log(j);
+//              }
+//         }
+
+   }
+  }  
+}
     
 
 
