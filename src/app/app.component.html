@@ -1,2 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
+<table>
+    <tr>
+        <th *ngFor="let head of header">{{head}}</th>
+    </tr>
+    <tr *ngFor="let data of data">
+        <td *ngFor="let head of header">
+            {{data[head]}}
+        </td>
+    </tr>
+</table>
