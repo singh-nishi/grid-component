@@ -75,15 +75,15 @@ MIT © [sukanta2017](mailto:sukanta.biswas@rancelab.com)
 ## PACKAGE DEVELOPMENT PROCESS
 
 ## First, install Yeoman and generator-angular2-library using npm (assuming you already have node.js pre-installed).
-npm install -g yo
-npm install -g generator-angular2-library
+npm install -g yo -> help in create package
+npm install -g generator-angular2-library -> help in generate package 
 
-## Make a new directory and cd into it:
+## Make a new directory for package create and go to that folder from cmd
 mkdir angular-library-name
 cd angular-library-name
 
 ## Generate your new library:
-yo angular2-library
+yo angular2-library in folder(angular-library-name)
 
 ## The generator will prompt you for:
 Your full name:
@@ -91,7 +91,7 @@ Your email address:
 Your library name:
 Git repository url:
 
-## After taht add or edit *.ts files in the src/ directory and run:
+## After that add or edit *.ts files in the src/ directory and run:
 npm run build
 to automatically create all *.js, *.d.ts and *.metadata.json files in the dist directory
 
