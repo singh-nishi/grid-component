@@ -1,0 +1,28 @@
+{
+  "name": "dynamic-grid",
+  "version": "0.1.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukanta2017/Report"
+  },
+  "author": {
+    "name": "sukanta2017",
+    "email": "sukanta.biswas@rancelab.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sukanta2017/Report/issues"
+  },
+  "main": "dynamic-grid.umd.js",
+  "module": "dynamic-grid.js",
+  "jsnext:main": "dynamic-grid.js",
+  "typings": "dynamic-grid.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
