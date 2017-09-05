@@ -4,17 +4,18 @@ import { AppComponent } from './app.component';
 import { Component } from '@angular/core';
 import { Myservice } from './myservice.service';
 import { HttpModule } from '@angular/http';
+import { CommonComponentComponent } from './common-component/common-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommonComponentComponent
   ],
   imports: [
     BrowserModule,HttpModule
   ],
   providers: [Myservice],
-  bootstrap: [AppComponent]
+  bootstrap: [CommonComponentComponent]
 })
 export class AppModule {
-
  }

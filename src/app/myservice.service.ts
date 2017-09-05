@@ -9,18 +9,18 @@ import 'rxjs/add/operator/map';
 
 export class Myservice {
   response: any;
-  constructor(private _http: Http) { }
+  constructor(public _http: Http) { }
   getValues(): Observable<any> {
-    return this._http.get('./assets/data/CountryList.json')
+    return this._http.get('https://restcountries.eu/rest/v2/all')
       .map(response => response.json());
   }
-  getKey(key: string) {
-    return this.getValues().map(data => {
-      if (data[key] != 'undefined') {
-        return data[key];
-      } else {
-        return false;
-      }
-    });
-  }
+  // getKey(key: string) {
+  //   return this.getValues().map(data => {
+  //     if (data[key] != 'undefined') {
+  //       return data[key];
+  //     } else {
+  //       return false;
+  //     }
+  //   });
+  // }
 }
