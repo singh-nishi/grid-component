@@ -5,7 +5,7 @@ import { SampleService } from './sample.service';
   selector: 'sample-component',
   //template: `<h1>Sample component</h1>`
   template:`
-   <table>
+   <table border="1">
         <tr>
           <th *ngFor="let head of header">{{head}}</th>
         </tr>
@@ -20,10 +20,11 @@ import { SampleService } from './sample.service';
 export class SampleComponent {
   data: any = [];
   header: any = [];
+  //jsonUrl: string;
   constructor(private _myservice: SampleService) {
-     this.getRecrods();
+     this.getRecrods(_myservice.jsonURL);
   }
-    getRecrods() {
+    getRecrods(jsonUrl) {
     this._myservice.getValues().subscribe(value => {
       this.data = value;
       for (let header in this.data[0]) {

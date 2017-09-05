@@ -70,3 +70,37 @@ $ npm run lint
 ## License
 
 MIT © [sukanta2017](mailto:sukanta.biswas@rancelab.com)
+
+
+## PACKAGE DEVELOPMENT PROCESS
+
+## First, install Yeoman and generator-angular2-library using npm (assuming you already have node.js pre-installed).
+npm install -g yo
+npm install -g generator-angular2-library
+
+## Make a new directory and cd into it:
+mkdir angular-library-name
+cd angular-library-name
+
+## Generate your new library:
+yo angular2-library
+
+## The generator will prompt you for:
+Your full name:
+Your email address:
+Your library name:
+Git repository url:
+
+## After taht add or edit *.ts files in the src/ directory and run:
+npm run build
+to automatically create all *.js, *.d.ts and *.metadata.json files in the dist directory
+
+## Finally you publish your library to NPM by publishing the contents of the dist directory
+npm publish dist
+
+## Publish the contents of the dist directory to NPM
+npm publish dist
+
+
+
+

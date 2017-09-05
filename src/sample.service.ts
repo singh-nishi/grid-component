@@ -8,10 +8,11 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SampleService {
   response: any;
+  public jsonURL: string;
    constructor(private _http: Http) {
   }
     getValues(): Observable<any> {
-    return this._http.get('https://restcountries.eu/rest/v2/all')
+    return this._http.get(this.jsonURL)
     .map(response => response.json());
   }
 }
