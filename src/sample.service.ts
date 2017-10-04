@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SampleService {
   response: any;
-  public jsonURL: string;
+  jsonURL: string;
    constructor(private _http: Http) {
   }
     getValues(): Observable<any> {

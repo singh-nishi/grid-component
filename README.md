@@ -74,6 +74,8 @@ MIT © [sukanta2017](mailto:sukanta.biswas@rancelab.com)
 
 ## PACKAGE DEVELOPMENT PROCESS
 
+URL Link : https://www.npmjs.com/package/generator-angular2-library
+
 ## First, install Yeoman and generator-angular2-library using npm (assuming you already have node.js pre-installed).
 npm install -g yo -> help in create package
 npm install -g generator-angular2-library -> help in generate package 

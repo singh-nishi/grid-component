@@ -21,10 +21,10 @@ export class SampleComponent {
   data: any = [];
   header: any = [];
   //jsonUrl: string;
-  constructor(private _myservice: SampleService) {
+  constructor(public _myservice: SampleService) {
      this.getRecrods(_myservice.jsonURL);
   }
-    getRecrods(jsonUrl) {
+    getRecrods(Json) {
     this._myservice.getValues().subscribe(value => {
       this.data = value;
       for (let header in this.data[0]) {
@@ -32,5 +32,4 @@ export class SampleComponent {
       }
      });
   }
-
 }
